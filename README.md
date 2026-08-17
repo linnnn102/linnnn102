@@ -72,7 +72,3 @@ A restaurant app where the customer browses the menu with the usual `+`/`−`/re
 ```
 
 Classic snake in a real window. WASD or arrow keys to steer, space to start, ESC to quit. `make check` tells you which SDL2 libraries you're missing before you try to build.
-
-```
-~/lin-ju ❯ open https://linnnn102.github.io
-```
