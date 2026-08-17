@@ -1,4 +1,4 @@
-![Lin Ju — AI engineer, software developer, multimodal LLM researcher](assets/banner.svg)
+![Lin Ju — AI engineer, software developer, multimodal LLM researcher. Starred: RaGuard, where every model call runs on a local Ollama through a retrieve, analyze, fuzz, report pipeline; and IntelligentBistro, where "add two spicy chicken sandwiches and a large water" becomes zod-validated add_item tool calls.](assets/hero.svg)
 
 [![Portfolio — linnnn102.github.io](https://img.shields.io/badge/portfolio-linnnn102.github.io-34d399?style=flat-square&labelColor=0a0e16)](https://linnnn102.github.io/)
 [![LinkedIn — linnnnj](https://img.shields.io/badge/linkedin-linnnnj-8b97a8?style=flat-square&labelColor=0a0e16&logo=linkedin&logoColor=8b97a8)](https://linkedin.com/in/linnnnj)
@@ -9,9 +9,7 @@ Full experience, research, and education → **[linnnn102.github.io](https://lin
 
 ---
 
-## ★ Star projects
-
-### [RaGuard](https://github.com/linnnn102/RaGuard) — a vulnerability copilot that never leaves your machine
+[![★ RaGuard — a vulnerability copilot that never leaves your machine](assets/star-raguard.svg)](https://github.com/linnnn102/RaGuard)
 
 `Python` · `Ollama / Qwen3` · `RAG` · `Docker` · `ffuf` · `SecLists`
 
@@ -27,7 +25,7 @@ source.py ─▶ retrieve CWE/CVE ─▶ Qwen3 static analysis
 - Every wordlist path is validated against the SecLists catalog before it reaches the generated `fuzz.sh`, so a path the model invented can never break a run. If the model is unreachable, a static CWE→wordlist map takes over.
 - `docker compose up` runs the whole pipeline: hardened vulnerable target, fuzzing runner, parsed report. Fuzz jobs are independent — one failure is reported instead of discarding the rest.
 
-### [IntelligentBistro](https://github.com/linnnn102/IntelligentBistro) — ordering you can talk to
+[![★ IntelligentBistro — ordering you can talk to](assets/star-bistro.svg)](https://github.com/linnnn102/IntelligentBistro)
 
 `TypeScript` · `Expo / React Native` · `NativeWind` · `Zustand` · `Node / Express` · `Gemini API` · `Zod`
 

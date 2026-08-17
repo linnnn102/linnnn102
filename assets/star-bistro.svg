@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 64" width="1120" height="64" role="img" aria-label="Starred project — IntelligentBistro: ordering you can talk to">
+  <title>★ IntelligentBistro — ordering you can talk to</title>
+
+  <defs>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="1118" height="62" rx="10"/>
+    </clipPath>
+
+    <style>
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular,
+                     Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      }
+      .d1 { animation: typing 1.5s ease-in-out infinite; }
+      .d2 { animation: typing 1.5s ease-in-out infinite 0.18s; }
+      .d3 { animation: typing 1.5s ease-in-out infinite 0.36s; }
+      @keyframes typing {
+        0%, 60%, 100% { opacity: 0.25 }
+        30%           { opacity: 1 }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .d1, .d2, .d3 { animation: none }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect x="1" y="1" width="1118" height="62" fill="#111722"/>
+    <rect x="1" y="1" width="3" height="62" fill="#34d399" fill-opacity="0.8"/>
+  </g>
+  <rect x="1" y="1" width="1118" height="62" rx="10" fill="none" stroke="#1d2433"/>
+
+  <polygon fill="#34d399" points="36,23 38.29,28.84 44.56,29.22 39.71,33.21 41.29,39.28 36,35.9 30.71,39.28 32.29,33.21 27.44,29.22 33.71,28.84"/>
+
+  <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">IntelligentBistro</text>
+  <text class="mono" x="280" y="39" font-size="14" fill="#8b97a8">ordering you can talk to</text>
+
+  <circle class="d1" cx="508" cy="34" r="3" fill="#34d399"/>
+  <circle class="d2" cx="520" cy="34" r="3" fill="#34d399"/>
+  <circle class="d3" cx="532" cy="34" r="3" fill="#34d399"/>
+
+  <text class="mono" x="1060" y="38" font-size="13" fill="#8b97a8" text-anchor="end">view repo</text>
+  <polyline points="1072,39 1084,27" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="1077,27 1084,27 1084,34" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 364" width="1120" height="364" role="img" aria-label="Lin Ju — AI engineer, software developer, multimodal LLM researcher. RaGuard: every model call runs on local Ollama, pipeline retrieve CWE/CVE, analyze with qwen3, fuzz with ffuf, report by CWE. IntelligentBistro: 'add two spicy chicken sandwiches and a large water' becomes zod-validated add_item tool calls via Gemini function calling.">
+  <title>Lin Ju — starred projects: RaGuard and IntelligentBistro</title>
+
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0V32M0 32H32" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+
+    <radialGradient id="glow" cx="0.8" cy="0" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.18"/>
+      <stop offset="0.5" stop-color="#34d399" stop-opacity="0.045"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#34d399" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular,
+                     Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      }
+      .caret  { animation: blink 1.15s steps(1, end) infinite; }
+      .runner { animation: run 3.4s ease-in-out infinite; }
+      .call-1 { animation: settle 3.4s ease-in-out infinite; }
+      .call-2 { animation: settle 3.4s ease-in-out infinite 0.45s; }
+
+      @keyframes blink  { 0%, 55% { opacity: 1 } 56%, 100% { opacity: 0.14 } }
+      @keyframes run    { 0% { transform: translateX(0) } 100% { transform: translateX(354px) } }
+      @keyframes settle { 0%, 22% { opacity: 0.28 } 42%, 100% { opacity: 1 } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .caret, .runner, .call-1, .call-2 { animation: none }
+      }
+    </style>
+  </defs>
+
+  <rect width="1120" height="364" fill="#0a0e16"/>
+  <rect width="1120" height="364" fill="url(#grid)"/>
+  <rect width="1120" height="364" fill="url(#glow)"/>
+
+  <!-- ~/lin-ju ❯ whoami -->
+  <text class="mono" x="64" y="56" font-size="17" fill="#8b97a8" textLength="82" lengthAdjust="spacing">~/lin-ju</text>
+  <polyline points="156,49 164,56 156,63" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="mono" x="176" y="56" font-size="17" fill="#e6edf3">whoami</text>
+
+  <text class="mono" x="64" y="120" font-size="52" font-weight="700" fill="#e6edf3" textLength="187" lengthAdjust="spacing">Lin Ju</text>
+  <rect class="caret" x="261" y="82" width="11" height="46" rx="1" fill="#34d399"/>
+  <text class="mono" x="288" y="120" font-size="16" fill="#8b97a8">AI Engineer <tspan fill="#34d399">·</tspan> Software Developer <tspan fill="#34d399">·</tspan> Multimodal LLM Researcher</text>
+
+  <!-- ~/lin-ju ❯ ls starred/ -->
+  <text class="mono" x="64" y="168" font-size="17" fill="#8b97a8" textLength="82" lengthAdjust="spacing">~/lin-ju</text>
+  <polyline points="156,161 164,168 156,175" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="mono" x="176" y="168" font-size="17" fill="#e6edf3">ls starred/</text>
+
+  <!-- ── RaGuard ─────────────────────────────────────── -->
+  <rect x="64" y="190" width="480" height="158" rx="10" fill="#111722" stroke="#1d2433"/>
+  <circle cx="92" cy="216" r="3.5" fill="#34d399"/>
+  <text class="mono" x="106" y="221" font-size="18" font-weight="700" fill="#e6edf3">RaGuard</text>
+  <text class="mono" x="520" y="220" font-size="12.5" fill="#8b97a8" text-anchor="end"><tspan fill="#34d399">$</tspan> docker compose up</text>
+  <line x1="88" y1="236" x2="520" y2="236" stroke="#1d2433"/>
+
+  <text class="mono" x="88" y="262" font-size="15" fill="#8b97a8">every model call runs on <tspan fill="#34d399">local Ollama</tspan></text>
+
+  <line x1="132" y1="296" x2="486" y2="296" stroke="#1d2433" stroke-width="2"/>
+  <circle cx="132" cy="296" r="4.5" fill="#0a0e16" stroke="#34d399" stroke-width="2"/>
+  <circle cx="250" cy="296" r="4.5" fill="#0a0e16" stroke="#34d399" stroke-width="2"/>
+  <circle cx="368" cy="296" r="4.5" fill="#0a0e16" stroke="#34d399" stroke-width="2"/>
+  <circle cx="486" cy="296" r="4.5" fill="#0a0e16" stroke="#34d399" stroke-width="2"/>
+  <circle class="runner" cx="132" cy="296" r="5" fill="#34d399"/>
+
+  <g class="mono" font-size="14" fill="#e6edf3" text-anchor="middle">
+    <text x="132" y="320">retrieve</text>
+    <text x="250" y="320">analyze</text>
+    <text x="368" y="320">fuzz</text>
+    <text x="486" y="320">report</text>
+  </g>
+  <g class="mono" font-size="12" fill="#8b97a8" text-anchor="middle">
+    <text x="132" y="336">CWE·CVE</text>
+    <text x="250" y="336">qwen3</text>
+    <text x="368" y="336">ffuf</text>
+    <text x="486" y="336">by CWE</text>
+  </g>
+
+  <!-- ── IntelligentBistro ───────────────────────────── -->
+  <rect x="576" y="190" width="480" height="158" rx="10" fill="#111722" stroke="#1d2433"/>
+  <circle cx="604" cy="216" r="3.5" fill="#34d399"/>
+  <text class="mono" x="618" y="221" font-size="18" font-weight="700" fill="#e6edf3">IntelligentBistro</text>
+  <text class="mono" x="1032" y="220" font-size="12.5" fill="#8b97a8" text-anchor="end">gemini function calling</text>
+  <line x1="600" y1="236" x2="1032" y2="236" stroke="#1d2433"/>
+
+  <text class="mono" x="600" y="262" font-size="15" fill="#e6edf3">"add two spicy chicken sandwiches</text>
+  <text class="mono" x="600" y="281" font-size="15" fill="#e6edf3"> and a large water"</text>
+
+  <g class="call-1">
+    <text class="mono" x="610" y="311" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">add_item</tspan> ×2</text>
+  </g>
+  <g class="call-2">
+    <text class="mono" x="610" y="333" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">add_item</tspan>(size: large)</text>
+  </g>
+  <text class="mono" x="1032" y="333" font-size="12" fill="#8b97a8" text-anchor="end">zod-validated</text>
+
+  <rect x="0" y="361" width="1120" height="3" fill="url(#rule)"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 64" width="1120" height="64" role="img" aria-label="Starred project — RaGuard: a vulnerability copilot that never leaves your machine">
+  <title>★ RaGuard — a vulnerability copilot that never leaves your machine</title>
+
+  <defs>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="1118" height="62" rx="10"/>
+    </clipPath>
+
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0"/>
+      <stop offset="0.72" stop-color="#34d399" stop-opacity="0.16"/>
+      <stop offset="0.96" stop-color="#34d399" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular,
+                     Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      }
+      .sweep { animation: scan 5.5s linear infinite; }
+      @keyframes scan {
+        0%   { transform: translateX(0) }
+        100% { transform: translateX(1240px) }
+      }
+      @media (prefers-reduced-motion: reduce) { .sweep { animation: none } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect x="1" y="1" width="1118" height="62" fill="#111722"/>
+    <rect x="1" y="1" width="3" height="62" fill="#34d399" fill-opacity="0.8"/>
+    <rect class="sweep" x="-120" y="1" width="120" height="62" fill="url(#scan)"/>
+  </g>
+  <rect x="1" y="1" width="1118" height="62" rx="10" fill="none" stroke="#1d2433"/>
+
+  <polygon fill="#34d399" points="36,23 38.29,28.84 44.56,29.22 39.71,33.21 41.29,39.28 36,35.9 30.71,39.28 32.29,33.21 27.44,29.22 33.71,28.84"/>
+
+  <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">RaGuard</text>
+  <text class="mono" x="160" y="39" font-size="14" fill="#8b97a8">a vulnerability copilot that never leaves your machine</text>
+
+  <text class="mono" x="1060" y="38" font-size="13" fill="#8b97a8" text-anchor="end">view repo</text>
+  <polyline points="1072,39 1084,27" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="1077,27 1084,27 1084,34" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
