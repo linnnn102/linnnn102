@@ -40,6 +40,22 @@ A restaurant app where the customer browses the menu with the usual `+`/`−`/re
 - The cart lives entirely in the app as Zustand state; the backend stays a thin menu server and AI proxy that passes the current cart and menu as system context.
 - Runs on iOS, Android, and web. On a physical device the app discovers Metro's host and finds the backend from there.
 
+[![★ jd-atlas — what the AI/ML job market actually asks for](assets/star-jd-atlas.svg)](https://github.com/linnnn102/jd-atlas)
+
+`Python` · `three.js / WebGL` · `NumPy` · `GitHub Actions` · `Greenhouse / Ashby / Lever`
+
+A 3D map of the tech stack and keyword landscape in AI/ML engineering job descriptions, rebuilt every morning from 57 public job boards. **[Live map →](https://linnnn102.github.io/jd-atlas/)**
+
+```
+57 job boards ─▶ ~500 AI/ML roles ─▶ 150-term tech taxonomy
+              ─▶ MDS + co-occurrence ─▶ 3D map, rebuilt daily
+```
+
+- Only public, documented ATS APIs — no LinkedIn or Indeed scraping. One request per board returns every posting with its full description, so a complete refresh of ~8,000 postings takes about 20 seconds.
+- Terms are placed by co-occurrence rather than frequency: classical MDS sets the global shape, similarity attraction pulls related tech together, and box separation guarantees none of the 124 labels overlap. Long labels separate horizontally instead of being flung out of the cloud.
+- Taxonomy aliases are audited against real posting text and every false positive is locked behind a test — `alignment` was matching "cross-functional alignment on goals", `cv` the "we never ask for CV writing services" anti-fraud boilerplate, `ray` the string "AWS X-Ray".
+- GitHub Actions rebuilds and redeploys daily behind a sanity gate that fails the run rather than publishing a broken map when a board changes its API. Full job-description text is never committed or published; only aggregate keyword output is.
+
 ---
 
 ## Also on the shelf
@@ -63,36 +79,12 @@ A restaurant app where the customer browses the menu with the usual `+`/`−`/re
 
 ## 🐍 And, for fun
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### [SnakeGame](https://github.com/linnnn102/SnakeGame) — C, SDL2, and a Makefile
 
-<h3><a href="https://github.com/linnnn102/jd-atlas">jd-atlas</a> — Python, three.js, GitHub Actions</h3>
-
-<pre>
+```
 ┌──────────────────────────────┐
-│  LLMs   PyTorch      vLLM    │
-│    CUDA    ◆    RAG    FSDP  │
+│  ●●●●●○                ◆     │    make check && make && ./snake
 └──────────────────────────────┘
-make refresh && make view
-</pre>
+```
 
-What 8,000 AI/ML job postings actually ask for, as a word cloud you can spin. 57 public job boards in, 150-term tech taxonomy out, laid out in 3D by co-occurrence so related tech sits together. Rebuilt every morning by GitHub Actions. <a href="https://linnnn102.github.io/jd-atlas/"><b>Live map →</b></a>
-
-</td>
-<td width="50%" valign="top">
-
-<h3><a href="https://github.com/linnnn102/SnakeGame">SnakeGame</a> — C, SDL2, and a Makefile</h3>
-
-<pre>
-┌──────────────────────────────┐
-│  ●●●●●○                ◆     │
-└──────────────────────────────┘
-make check &amp;&amp; make &amp;&amp; ./snake
-</pre>
-
-Classic snake in a real window. WASD or arrow keys to steer, space to start, ESC to quit. <code>make check</code> tells you which SDL2 libraries you're missing before you try to build.
-
-</td>
-</tr>
-</table>
+Classic snake in a real window. WASD or arrow keys to steer, space to start, ESC to quit. `make check` tells you which SDL2 libraries you're missing before you try to build.
