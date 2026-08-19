@@ -63,12 +63,36 @@ A restaurant app where the customer browses the menu with the usual `+`/`−`/re
 
 ## 🐍 And, for fun
 
-### [SnakeGame](https://github.com/linnnn102/SnakeGame) — C, SDL2, and a Makefile
+<table>
+<tr>
+<td width="50%" valign="top">
 
-```
+<h3><a href="https://github.com/linnnn102/jd-atlas">jd-atlas</a> — Python, three.js, GitHub Actions</h3>
+
+<pre>
 ┌──────────────────────────────┐
-│  ●●●●●○                ◆     │    make check && make && ./snake
+│  LLMs   PyTorch      vLLM    │
+│    CUDA    ◆    RAG    FSDP  │
 └──────────────────────────────┘
-```
+make refresh && make view
+</pre>
 
-Classic snake in a real window. WASD or arrow keys to steer, space to start, ESC to quit. `make check` tells you which SDL2 libraries you're missing before you try to build.
+What 8,000 AI/ML job postings actually ask for, as a word cloud you can spin. 57 public job boards in, 150-term tech taxonomy out, laid out in 3D by co-occurrence so related tech sits together. Rebuilt every morning by GitHub Actions. <a href="https://linnnn102.github.io/jd-atlas/"><b>Live map →</b></a>
+
+</td>
+<td width="50%" valign="top">
+
+<h3><a href="https://github.com/linnnn102/SnakeGame">SnakeGame</a> — C, SDL2, and a Makefile</h3>
+
+<pre>
+┌──────────────────────────────┐
+│  ●●●●●○                ◆     │
+└──────────────────────────────┘
+make check &amp;&amp; make &amp;&amp; ./snake
+</pre>
+
+Classic snake in a real window. WASD or arrow keys to steer, space to start, ESC to quit. <code>make check</code> tells you which SDL2 libraries you're missing before you try to build.
+
+</td>
+</tr>
+</table>
