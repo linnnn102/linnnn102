@@ -11,19 +11,21 @@ Full experience, research, and education → **[linnnn102.github.io](https://lin
 
 [![★ RaGuard — a vulnerability copilot that never leaves your machine](assets/star-raguard.svg)](https://github.com/linnnn102/RaGuard)
 
-`Python` · `Ollama / Qwen3` · `RAG` · `Docker` · `ffuf` · `SecLists`
+`Python` · `Ollama / Qwen3` · `RAG` · `QLoRA / Unsloth` · `Docker` · `ffuf` · `SecLists`
 
-Finds vulnerabilities in Python web apps, then proves them over HTTP. Every model call — orchestrator, specialists, and embedder — goes to a local Ollama, so there are no requests to model providers at runtime.
+Finds vulnerabilities in Python web apps, then proves them over HTTP. Every model call — orchestrator, specialists, and embedder — goes to a local Ollama, so there are no requests to model providers at runtime. It is also an experiment: how much of a generalist LLM's job can a fine-tuned 1.7B specialist take over, and what does that cost you?
 
 ```
 source.py ─▶ retrieve CWE/CVE ─▶ Qwen3 static analysis
           ─▶ select SecLists wordlists ─▶ ffuf ─▶ report by CWE
 ```
 
-- Retrieval grounds each finding in authoritative security taxonomy: CWE definitions and real CVE examples pulled by cosine similarity over `qwen3-embedding:0.6b` vectors. The knowledge base records which model embedded it and refuses to load a mismatched one.
+- Retrieval grounds each finding in authoritative security taxonomy: 994 chunks of CWE definitions and real CVE examples, pulled by cosine similarity over `qwen3-embedding:0.6b` vectors. The knowledge base records which model embedded it and refuses to load a mismatched one.
 - An LLM orchestrator runs a tool-calling loop and routes each narrow task to a specialist SLM — `analyze_code`, `select_wordlists`, `suggest_mitigations` — following NVIDIA's *[Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)*, including the paper's S1–S6 LLM-to-SLM conversion loop.
+- That loop is implemented end to end: 11.8K logged teacher-LLM calls curated down to an 820-example corpus, QLoRA fine-tuning on a free Colab T4, merged and quantized to GGUF for local serving. The specialist keeps **80% of the 8B baseline's F1 at 2× throughput and $0**, and swapping it in is one line of YAML.
+- An evaluation harness benchmarks three model arms on precision, recall, F1, latency, and token cost. Building it turned up the more interesting result: constraining output to valid JSON is not the same as constraining its *shape*, and an unparsed array had been reporting a working model as 0.000 F1.
 - Every wordlist path is validated against the SecLists catalog before it reaches the generated `fuzz.sh`, so a path the model invented can never break a run. If the model is unreachable, a static CWE→wordlist map takes over.
-- `docker compose up` runs the whole pipeline: hardened vulnerable target, fuzzing runner, parsed report. Fuzz jobs are independent — one failure is reported instead of discarding the rest.
+- `docker compose up` runs the whole pipeline in two OWASP-hardened containers: vulnerable target, fuzzing runner, parsed report. Fuzz jobs are independent — one failure is reported instead of discarding the rest.
 
 [![★ IntelligentBistro — ordering you can talk to](assets/star-bistro.svg)](https://github.com/linnnn102/IntelligentBistro)
 
@@ -40,7 +42,7 @@ A restaurant app where the customer browses the menu with the usual `+`/`−`/re
 - The cart lives entirely in the app as Zustand state; the backend stays a thin menu server and AI proxy that passes the current cart and menu as system context.
 - Runs on iOS, Android, and web. On a physical device the app discovers Metro's host and finds the backend from there.
 
-[![★ jd-atlas — what the AI/ML job market actually asks for](assets/star-jd-atlas.svg)](https://github.com/linnnn102/jd-atlas)
+[![★ JdAtlas — what the AI/ML job market actually asks for](assets/star-jd-atlas.svg)](https://github.com/linnnn102/jd-atlas)
 
 `Python` · `three.js / WebGL` · `NumPy` · `GitHub Actions` · `Greenhouse / Ashby / Lever`
 

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 64" width="1120" height="64" role="img" aria-label="Starred project — jd-atlas: what the AI/ML job market actually asks for">
-  <title>★ jd-atlas — what the AI/ML job market actually asks for</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 64" width="1120" height="64" role="img" aria-label="Starred project — JdAtlas: what the AI/ML job market actually asks for">
+  <title>★ JdAtlas — what the AI/ML job market actually asks for</title>
 
   <defs>
     <clipPath id="frame">
@@ -36,8 +36,8 @@
 
   <polygon fill="#34d399" points="36,23 38.29,28.84 44.56,29.22 39.71,33.21 41.29,39.28 36,35.9 30.71,39.28 32.29,33.21 27.44,29.22 33.71,28.84"/>
 
-  <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">jd-atlas</text>
-  <text class="mono" x="172" y="39" font-size="14" fill="#8b97a8">what the AI/ML job market actually asks for</text>
+  <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">JdAtlas</text>
+  <text class="mono" x="160" y="39" font-size="14" fill="#8b97a8">what the AI/ML job market actually asks for</text>
 
   <text class="mono" x="1060" y="38" font-size="13" fill="#8b97a8" text-anchor="end">view repo</text>
   <polyline points="1072,39 1084,27" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round"/>
