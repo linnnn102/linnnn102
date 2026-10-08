@@ -3,7 +3,7 @@
 [![Portfolio — linnnn102.github.io](https://img.shields.io/badge/portfolio-linnnn102.github.io-34d399?style=flat-square&labelColor=0a0e16)](https://linnnn102.github.io/)
 [![LinkedIn — linnnnj](https://img.shields.io/badge/linkedin-linnnnj-8b97a8?style=flat-square&labelColor=0a0e16&logo=linkedin&logoColor=8b97a8)](https://linkedin.com/in/linnnnj)
 
-M.S. Computer Software Engineering at Northeastern University, in Boston. I build systems where the model is one component and the engineering around it does the rest: local LLM pipelines, agentic tool-calling, retrieval grounded in real taxonomies. Three years as a data engineer before grad school, then GPU software as a Software Developer Intern at NVIDIA. My paper *Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks* was accepted at ICLR 2026.
+M.S. Computer Software Engineering at Northeastern University, in Boston. I build systems where the model is one component and the engineering around it does the rest: local LLM pipelines, agentic tool-calling, retrieval grounded in real taxonomies. Three years as a data engineer before grad school, then GPU software as a Software Developer Intern at NVIDIA. I co-authored *Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks*, accepted at ICLR 2026.
 
 Full experience, research, and education → **[linnnn102.github.io](https://linnnn102.github.io/)**
 
@@ -22,8 +22,7 @@ source.py ─▶ retrieve CWE/CVE ─▶ Qwen3 static analysis
 
 - Retrieval grounds each finding in authoritative security taxonomy: 994 chunks of CWE definitions and real CVE examples, pulled by cosine similarity over `qwen3-embedding:0.6b` vectors. The knowledge base records which model embedded it and refuses to load a mismatched one.
 - An LLM orchestrator runs a tool-calling loop and routes each narrow task to a specialist SLM — `analyze_code`, `select_wordlists`, `suggest_mitigations` — following NVIDIA's *[Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)*, including the paper's S1–S6 LLM-to-SLM conversion loop.
-- That loop is implemented end to end: 11.8K logged teacher-LLM calls curated down to an 820-example corpus, QLoRA fine-tuning on a free Colab T4, merged and quantized to GGUF for local serving. The specialist keeps **80% of the 8B baseline's F1 at 2× throughput and $0**, and swapping it in is one line of YAML.
-- An evaluation harness benchmarks three model arms on precision, recall, F1, latency, and token cost. Building it turned up the more interesting result: constraining output to valid JSON is not the same as constraining its *shape*, and an unparsed array had been reporting a working model as 0.000 F1.
+- That loop is implemented end to end: 11.8K logged teacher-LLM calls curated down to an 820-example corpus, QLoRA fine-tuning on a free Colab T4, merged and quantized to GGUF for local serving. Scored on precision, recall, F1, latency, and token cost, the fine-tuned 1.7B **finishes a scan in about half the 8B's time while catching 95% of what it catches** (recall 0.600 vs 0.633), and swapping it in is one line of YAML.
 - Every wordlist path is validated against the SecLists catalog before it reaches the generated `fuzz.sh`, so a path the model invented can never break a run. If the model is unreachable, a static CWE→wordlist map takes over.
 - `docker compose up` runs the whole pipeline in two OWASP-hardened containers: vulnerable target, fuzzing runner, parsed report. Fuzz jobs are independent — one failure is reported instead of discarding the rest.
 
