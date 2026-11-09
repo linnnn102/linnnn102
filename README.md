@@ -1,4 +1,4 @@
-![Lin Ju — AI engineer, software developer, multimodal LLM researcher. Starred: RaGuard, where every model call runs on a local Ollama through a retrieve, analyze, fuzz, report pipeline; and IntelligentBistro, where "add two spicy chicken sandwiches and a large water" becomes zod-validated add_item tool calls.](assets/hero.svg)
+![Lin Ju. Starred: RaGuard, where every model call runs on a local Ollama through a retrieve, analyze, fuzz, report pipeline; and Ferrite, an x86-64 OS whose own bootloader takes the CPU from real mode to long mode and into a no_std Rust kernel.](assets/hero.svg)
 
 [![Portfolio — linnnn102.github.io](https://img.shields.io/badge/portfolio-linnnn102.github.io-34d399?style=flat-square&labelColor=0a0e16)](https://linnnn102.github.io/)
 [![LinkedIn — linnnnj](https://img.shields.io/badge/linkedin-linnnnj-8b97a8?style=flat-square&labelColor=0a0e16&logo=linkedin&logoColor=8b97a8)](https://linkedin.com/in/linnnnj)
@@ -25,6 +25,22 @@ source.py ─▶ retrieve CWE/CVE ─▶ Qwen3 static analysis
 - That loop is implemented end to end: 11.8K logged teacher-LLM calls curated down to an 820-example corpus, QLoRA fine-tuning on a free Colab T4, merged and quantized to GGUF for local serving. Scored on precision, recall, F1, latency, and token cost, the fine-tuned 1.7B **finishes a scan in about half the 8B's time while catching 95% of what it catches** (recall 0.600 vs 0.633), and swapping it in is one line of YAML.
 - Every wordlist path is validated against the SecLists catalog before it reaches the generated `fuzz.sh`, so a path the model invented can never break a run. If the model is unreachable, a static CWE→wordlist map takes over.
 - `docker compose up` runs the whole pipeline in two OWASP-hardened containers: vulnerable target, fuzzing runner, parsed report. Fuzz jobs are independent — one failure is reported instead of discarding the rest.
+
+[![★ Ferrite — an x86-64 OS from scratch in Rust](assets/star-ferrite.svg)](https://github.com/linnnn102/Ferrite)
+
+`Rust (no_std)` · `x86-64 Assembly / NASM` · `QEMU` · `GDB / LLDB` · `Make`
+
+A small x86-64 operating system written from scratch: a two-stage bootloader that takes the CPU from 16-bit real mode to 64-bit long mode, and a freestanding Rust kernel. No GRUB, no `bootloader` crate, no external Rust dependencies.
+
+```
+BIOS ─▶ stage 1 @ 0x7C00 ─▶ load stage 2 + kernel via int 0x13
+     ─▶ GDT, protected mode ─▶ page tables, long mode ─▶ kmain() @ 0x10000
+```
+
+- Stage 2 checks long-mode support with CPUID, builds a PML4 → PDPT → PD identity map with one 2 MiB page, then sets PAE, EFER.LME and paging and far-jumps through a 64-bit GDT into the kernel.
+- The kernel is `#![no_std]`, `#![no_main]`, `panic = "abort"`, with a custom panic handler and a linker script that pins `kmain` at `0x10000`. Port I/O wraps `in`/`out` with inline `asm!`.
+- The VGA text driver handles 80×25 with 16 colors, line wrapping and scrolling, volatile bounds-checked buffer writes, and hardware cursor control through the CRTC ports.
+- `make run` boots it in QEMU and logs interrupts and resets; `make debug` boots paused with a GDB stub. The build fails if the kernel outgrows the sectors the bootloader loads, rather than booting a truncated image.
 
 [![★ IntelligentBistro — ordering you can talk to](assets/star-bistro.svg)](https://github.com/linnnn102/IntelligentBistro)
 

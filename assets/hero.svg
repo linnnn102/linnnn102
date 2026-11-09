@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 300" width="1120" height="300" role="img" aria-label="Lin Ju — AI engineer, software developer, multimodal LLM researcher. RaGuard: every model call runs on local Ollama, pipeline retrieve CWE/CVE, analyze with qwen3, fuzz with ffuf, report by CWE. IntelligentBistro: 'add two spicy chicken sandwiches and a large water' becomes zod-validated add_item tool calls via Gemini function calling.">
-  <title>Lin Ju — starred projects: RaGuard and IntelligentBistro</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 300" width="1120" height="300" role="img" aria-label="Lin Ju. RaGuard: every model call runs on local Ollama, pipeline retrieve CWE/CVE, analyze with qwen3, fuzz with ffuf, report by CWE. Ferrite: an x86-64 OS from scratch, its own bootloader takes the CPU from 16-bit real mode to 64-bit long mode and calls a no_std Rust kernel at 0x10000.">
+  <title>Lin Ju — starred projects: RaGuard and Ferrite</title>
 
   <defs>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -44,7 +44,6 @@
 
   <text class="mono" x="64" y="76" font-size="52" font-weight="700" fill="#e6edf3" textLength="187" lengthAdjust="spacing">Lin Ju</text>
   <rect class="caret" x="261" y="38" width="11" height="46" rx="1" fill="#34d399"/>
-  <text class="mono" x="288" y="76" font-size="16" fill="#8b97a8">AI Engineer <tspan fill="#34d399">·</tspan> Software Developer <tspan fill="#34d399">·</tspan> Multimodal LLM Researcher</text>
 
   <!-- ── RaGuard ─────────────────────────────────────── -->
   <rect x="64" y="120" width="480" height="158" rx="10" fill="#111722" stroke="#1d2433"/>
@@ -75,23 +74,23 @@
     <text x="486" y="266">by CWE</text>
   </g>
 
-  <!-- ── IntelligentBistro ───────────────────────────── -->
+  <!-- ── Ferrite ─────────────────────────────────────── -->
   <rect x="576" y="120" width="480" height="158" rx="10" fill="#111722" stroke="#1d2433"/>
   <circle cx="604" cy="146" r="3.5" fill="#34d399"/>
-  <text class="mono" x="618" y="151" font-size="18" font-weight="700" fill="#e6edf3">IntelligentBistro</text>
-  <text class="mono" x="1032" y="150" font-size="12.5" fill="#8b97a8" text-anchor="end">gemini function calling</text>
+  <text class="mono" x="618" y="151" font-size="18" font-weight="700" fill="#e6edf3">Ferrite</text>
+  <text class="mono" x="1032" y="150" font-size="12.5" fill="#8b97a8" text-anchor="end">x86-64 · from scratch</text>
   <line x1="600" y1="166" x2="1032" y2="166" stroke="#1d2433"/>
 
-  <text class="mono" x="600" y="192" font-size="15" fill="#e6edf3">"add two spicy chicken sandwiches</text>
-  <text class="mono" x="600" y="211" font-size="15" fill="#e6edf3"> and a large water"</text>
+  <text class="mono" x="600" y="192" font-size="15" fill="#8b97a8">BIOS <tspan fill="#34d399">─▶</tspan> <tspan fill="#e6edf3">own bootloader</tspan> @ 0x7C00</text>
+  <text class="mono" x="600" y="211" font-size="15" fill="#8b97a8">16-bit <tspan fill="#34d399">─▶</tspan> 32-bit <tspan fill="#34d399">─▶</tspan> <tspan fill="#e6edf3">64-bit long mode</tspan></text>
 
   <g class="call-1">
-    <text class="mono" x="610" y="241" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">add_item</tspan> ×2</text>
+    <text class="mono" x="610" y="241" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">kmain()</tspan> @ 0x10000</text>
   </g>
   <g class="call-2">
-    <text class="mono" x="610" y="263" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">add_item</tspan>(size: large)</text>
+    <text class="mono" x="610" y="263" font-size="14" fill="#8b97a8">└─ <tspan fill="#34d399">vga</tspan> 80×25 @ 0xB8000</text>
   </g>
-  <text class="mono" x="1032" y="263" font-size="12" fill="#8b97a8" text-anchor="end">zod-validated</text>
+  <text class="mono" x="1032" y="263" font-size="12" fill="#8b97a8" text-anchor="end">#![no_std] rust</text>
 
   <rect x="0" y="297" width="1120" height="3" fill="url(#rule)"/>
 </svg>

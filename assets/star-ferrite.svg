@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 64" width="1120" height="64" role="img" aria-label="Starred project — Ferrite: an x86-64 OS from scratch in Rust">
+  <title>★ Ferrite — an x86-64 OS from scratch in Rust</title>
+
+  <defs>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="1118" height="62" rx="10"/>
+    </clipPath>
+
+    <style>
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular,
+                     Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      }
+      .cursor { animation: blink 1.15s steps(1, end) infinite; }
+      @keyframes blink { 0%, 55% { opacity: 1 } 56%, 100% { opacity: 0.14 } }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor { animation: none }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect x="1" y="1" width="1118" height="62" fill="#111722"/>
+    <rect x="1" y="1" width="3" height="62" fill="#34d399" fill-opacity="0.8"/>
+  </g>
+  <rect x="1" y="1" width="1118" height="62" rx="10" fill="none" stroke="#1d2433"/>
+
+  <polygon fill="#34d399" points="36,23 38.29,28.84 44.56,29.22 39.71,33.21 41.29,39.28 36,35.9 30.71,39.28 32.29,33.21 27.44,29.22 33.71,28.84"/>
+
+  <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">Ferrite</text>
+  <text class="mono" x="164" y="39" font-size="14" fill="#8b97a8">an x86-64 OS from scratch: own bootloader, no_std Rust kernel</text>
+
+  <rect class="cursor" x="699" y="39" width="10" height="3" fill="#34d399"/>
+
+  <text class="mono" x="1060" y="38" font-size="13" fill="#8b97a8" text-anchor="end">view repo</text>
+  <polyline points="1072,39 1084,27" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="1077,27 1084,27 1084,34" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
