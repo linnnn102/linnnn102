@@ -6,31 +6,27 @@
       <rect x="1" y="1" width="1118" height="62" rx="10"/>
     </clipPath>
 
-    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#34d399" stop-opacity="0"/>
-      <stop offset="0.72" stop-color="#34d399" stop-opacity="0.16"/>
-      <stop offset="0.96" stop-color="#34d399" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
-    </linearGradient>
 
     <style>
       .mono {
         font-family: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular,
                      Menlo, Consolas, "DejaVu Sans Mono", monospace;
       }
-      .sweep { animation: scan 5.5s linear infinite; }
-      @keyframes scan {
-        0%   { transform: translateX(0) }
-        100% { transform: translateX(1240px) }
+      .ping {
+        transform-box: fill-box; transform-origin: center;
+        animation: ping 2.2s ease-out infinite;
       }
-      @media (prefers-reduced-motion: reduce) { .sweep { animation: none } }
+      @keyframes ping {
+        0%   { transform: scale(1); opacity: 0.8 }
+        70%, 100% { transform: scale(3.4); opacity: 0 }
+      }
+      @media (prefers-reduced-motion: reduce) { .ping { animation: none; opacity: 0 } }
     </style>
   </defs>
 
   <g clip-path="url(#frame)">
     <rect x="1" y="1" width="1118" height="62" fill="#111722"/>
     <rect x="1" y="1" width="3" height="62" fill="#34d399" fill-opacity="0.8"/>
-    <rect class="sweep" x="-120" y="1" width="120" height="62" fill="url(#scan)"/>
   </g>
   <rect x="1" y="1" width="1118" height="62" rx="10" fill="none" stroke="#1d2433"/>
 
@@ -38,6 +34,9 @@
 
   <text class="mono" x="60" y="39" font-size="20" font-weight="700" fill="#e6edf3">RaGuard</text>
   <text class="mono" x="160" y="39" font-size="14" fill="#8b97a8">a vulnerability copilot that never leaves your machine</text>
+
+  <circle class="ping" cx="648" cy="34" r="3" fill="none" stroke="#34d399" stroke-width="1.2"/>
+  <circle cx="648" cy="34" r="3" fill="#34d399"/>
 
   <text class="mono" x="1060" y="38" font-size="13" fill="#8b97a8" text-anchor="end">view repo</text>
   <polyline points="1072,39 1084,27" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linecap="round"/>
